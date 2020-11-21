@@ -47,7 +47,7 @@ int main()
                         system("clear");
                         printf("### Valor Invalido ###\n\n");
                     }
-                } while (deveRetornar != 0 && deveRetornar != 1) ;
+                } while (deveRetornar != 0 && deveRetornar != 1);
             } while (deveRetornar != 0);
         }
         else if (op == 2)
@@ -56,23 +56,29 @@ int main()
             {
                 system("clear");
                 printf("### Calcular a área de um Círculo ####\n\n\n");
+                printf("Favor entrar com a informação solicitada abaixo: \n");
 
+                #define PI 3.14159
+                float vRaio, vArea;
 
-                //Programa aqui
+                printf("\nInforme o raio da círculo: ");
+                scanf("%f", &vRaio);
 
+                vArea = PI * (vRaio * vRaio);
 
-            do
-            {
-                printf("Digite 0 para voltar ao menu principal...\n");
-                printf("Digite 2 para utilizar novamente a calculadora\n");
-                scanf("%d", &deveRetornar);
+                printf("\nA Área da circunferência é: %2f\n\n\n", (vArea));
+                do
+                {
+                    printf("Digite 0 para voltar ao menu principal...\n");
+                    printf("Digite 2 para utilizar novamente a calculadora\n");
+                    scanf("%d", &deveRetornar);
 
                     if (deveRetornar != 0 && deveRetornar != 2)
                     {
                         system("clear");
                         printf("### Valor Invalido ###\n\n");
                     }
-                } while (deveRetornar != 0 && deveRetornar != 2) ;
+                } while (deveRetornar != 0 && deveRetornar != 2);
             } while (deveRetornar != 0);
         }
         else if (op == 0)
@@ -83,9 +89,13 @@ int main()
         }
         else
         {
-            printf("OPS, Você digitou uma opcão inválida!\n\n\n");
-            printf("Digite 0 para voltar ao menu principal...\n");
-            scanf("%u", &op);
+            do
+            {
+                system("clear");
+                printf("OPS, Você digitou uma opcão inválida!\n\n\n");
+                printf("Digite 0 para voltar ao menu principal...\n");
+                scanf("%u", &op);
+            } while (deveRetornar != 0 || deveRetornar == 0);
         }
 
     } while (op != 3);
